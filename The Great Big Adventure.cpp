@@ -845,7 +845,7 @@ void Bowl(GameState& state) {
             state.frameScore = 0;
             Bowl( state );
         }
-        else if (state.remainingPins != 0) {
+        else {
             std::cout << "\nThere are " << state.remainingPins << " still standing.";
             std::cout << "\nRoll again?" << "\n\n1) Roll again" << "\n2) Quit bowling";
             std::cout << "\n\n Make a selection:";
@@ -893,7 +893,7 @@ void Bowl(GameState& state) {
                     state.frameScore = 0;
                     Bowl( state );
                 }
-                else if (state.remainingPins != 0) {
+                else {
                     state.bowlingFrame = state.bowlingFrame + 1;
                     if (state.lastFrame == "X") {
                         state.frameScore = state.frameScore + state.pinKnockdown * 2;
@@ -1068,11 +1068,8 @@ void Combat(GameState& state) {
             std::cout << "Misses";
             state.player.playerDam = DAMAGE_NULL;
         }
-        else if (attackHit <= state.player.playerAcc) {
-            std::cout << "Hits";
-        }
         else {
-            std::cout << "Error";
+            std::cout << "Hits";
         }
         std::cout << " and deals " << state.player.playerDam << " damage.\n\n";
         state.enemy.enemyHealth = state.enemy.enemyHealth - state.player.playerDam;
@@ -1084,14 +1081,14 @@ void Combat(GameState& state) {
             state.enemy.enemyStrength = state.enemy.enemyStrength + 1;
             Combat( state );
         }
-        else if (state.enemy.enemyHealth != 0 && state.enemy.enemyHealth > 0) {
+        else {
             std::cout << "The alien has " << state.enemy.enemyHealth << " health remaining.\n";
             std::cout << "The alien counter attacks. The attack ";
             if (enemyHit > ACC_BLASTER) {
                 std::cout << "Misses";
                 enemyDam = DAMAGE_NULL;
             }
-            else if (enemyHit <= ACC_BLASTER) {
+            else {
                 std::cout << "Hits";
             }
             std::cout << " and deals " << enemyDam << " damage.\n\n";
