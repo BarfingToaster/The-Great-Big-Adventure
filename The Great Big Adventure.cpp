@@ -1,5 +1,8 @@
 #include <iostream>
-#include <windows.h>
+#include <chrono>
+#include <thread>
+
+using namespace std::chrono_literals;
 
 int playerHealth = 10;
 int playerStrength = 5;
@@ -333,7 +336,7 @@ std::string LivingRoom(void) {
         bodyClean = false;
         for (int t = 0; t < 5; t++) {
             std::cout << "\nRiding";
-            Sleep(2000);
+	    std::this_thread::sleep_for(2000ms);
         }
         while (playerStrength <= 5) {
             std::cout << "\nYour strength has increased";
@@ -518,7 +521,7 @@ std::string Kitchen(void) {
         std::cout << "\nYou pop two slices of bread in the toaster and wait for them to toast.";
         for (int t = 0; t < 5; t++) {
             std::cout << "\nToasting";
-            Sleep(2000);
+	    std::this_thread::sleep_for(2000ms);
         }
         std::cout << "\nToast ready";
         toastMade = true;
