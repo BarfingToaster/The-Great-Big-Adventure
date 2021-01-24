@@ -60,19 +60,20 @@ std::string playerLoc = "Bedroom";
 std::string lastFrame = "0";
 std::string lastFrame2 = "0";
 std::string playerWeapon = "Fists";
-std::string Bathroom(void);
-std::string Bedroom(void);
-std::string LivingRoom(void);
-std::string Kitchen(void);
-std::string OutsideHome(void);
-std::string FranksHouse(void);
-std::string BowlingAlley(void);
-std::string AlienCraft(void);
-std::string Bowl(void);
-std::string DreamWorld(void);
-std::string Combat(void);
+void Bathroom();
+void Bedroom();
+void LivingRoom();
+void Kitchen();
+void OutsideHome();
+void FranksHouse();
+void BowlingAlley();
+void AlienCraft();
+void Bowl();
+void DreamWorld();
+void Combat();
 
-std::string Bathroom(void) {
+
+void Bathroom() {
     std::cout << "\n\nWhat would you like to do?\n\n";
     // Present bathroom action selections
     if (needToilet == false) {
@@ -138,10 +139,10 @@ std::string Bathroom(void) {
     else {
         std::cout << "\nInvalid Entry. Please enter action number only.";
     }
-    return 0;
 }
 
-std::string Bedroom(void) {
+
+void Bedroom() {
     std::cout << "\n\nWhat would you like to do?\n\n";
     //This section is for printing the possible actions in the Bedroom
     if (playerDressed == false) {
@@ -300,10 +301,10 @@ std::string Bedroom(void) {
         std::cout << "Invalid Entry. Please enter action number only.";
         Bedroom();
     }
-    return 0;
 }
 
-std::string LivingRoom(void) {
+
+void LivingRoom() {
     std::cout << "\n\nWhat would you like to do?\n\n";
     // Present Living room action selections
     if (needToilet == true) {
@@ -423,12 +424,11 @@ std::string LivingRoom(void) {
             std::cout << "\nInvalid entry. Please enter action number only.";
             LivingRoom();
         }
-        
     }
-    return 0;
 }
 
-std::string Kitchen(void) {
+
+void Kitchen() {
     std::cout << "\n\nWhat would you like to do?\n\n";
     //Print Kitchen Actions
     if (fridgeOpen == false) {
@@ -571,11 +571,10 @@ std::string Kitchen(void) {
         std::cout << "\nInvalid Entry. Please enter action number only.";
         Kitchen();
     }
-    return 0;
 }
 
 
-std::string OutsideHome(void) {
+void OutsideHome() {
     std::cout << "\nWhat would you like to do?\n";
     std::cout << "\n1) Go see your neighbor Frank." << "\n2) Go to the bowling alley." << "\n3) Head towards the alien spacecraft." << "\n4) Go into your house.";
     //Print player stats
@@ -608,12 +607,10 @@ std::string OutsideHome(void) {
         std::cout << "\nInvalid Entry. Please enter action number only.";
         OutsideHome();
     }
-
-    return 0;
 }
 
 
-std::string FranksHouse(void) {
+void FranksHouse() {
     std::cout << "\nWhat would you like to do?\n";
     std::cout << "\n1) Talk to Frank about the aliens." << "\n2) Ask Frank for some water." << "\n3) Talk to Frank about gun control." << "\n4) Talk to Frank about religion." << "\n5) Say goodbye to Frank and go home.";
     //Print player stats
@@ -643,7 +640,7 @@ std::string FranksHouse(void) {
         else {
             std::cout << "\n";
         }
-        FranksHouse();    
+        FranksHouse();
     }
     else if (playerAction == "2" && playerHigh == true) {
         std::cout << "\nYou ask Frank for a glass of water. He brings you a glass of water from the kitchen.\n \"Awesome duder. You're like totally the best.\" you say as you drink the water down.";
@@ -703,11 +700,10 @@ std::string FranksHouse(void) {
         std::cout << "\nInvalid Entry. Please enter action number only.";
         FranksHouse();
     }
-    return 0;
 }
 
 
-std::string BowlingAlley(void) {
+void BowlingAlley() {
     std::cout << "\nWhat would you like to do?\n";
     if (shoesRented == false) {
         std::cout << "\n1) Rent shoes";
@@ -719,7 +715,7 @@ std::string BowlingAlley(void) {
     //Print player stats
     std::cout << "\nLocation: " << playerLoc << " || Health: " << playerHealth << " || Agility: " << playerAgility << " || Strength: " << playerStrength;
     std::cout << "\n\n Make a selection:";
-    
+
     std::cin >> playerAction;
 
     if (playerAction == "1" && shoesRented == false) {
@@ -777,11 +773,9 @@ std::string BowlingAlley(void) {
         std::cout << "\nInvalid Entry. Please enter action number only.";
         BowlingAlley();
     }
-
-    return 0;
 }
 
-std::string Bowl(void) {
+void Bowl() {
     std::cout << "\nFrame: " << bowlingFrame << " Score: " << bowlingScore << " Pins remaining: " << remainingPins;
     std::cout << "\n\n1) Bowl frame" << "\n2) Quit Bowling";
     //Print player stats
@@ -895,7 +889,6 @@ std::string Bowl(void) {
                 std::cout << "\nInvalid Entry. Please enter action number only.";
                 Bowl();
             }
-            
         }
     }
     else if (playerAction == "2") {
@@ -908,11 +901,10 @@ std::string Bowl(void) {
     else {
         std::cout << "\nInvalid Entry. Please enter action number only.";
     }
-    return 0;
 }
 
 
-std::string AlienCraft(void) {
+void AlienCraft() {
     std::cout << "\nWhat would you like to do?\n";
     std::cout << "\n1) Investigate the alien spacecraft." << "\n2) Find an alien." << "\n3) Return home.";
     if (alienFound == false) {
@@ -959,12 +951,10 @@ std::string AlienCraft(void) {
     else {
         std::cout << "\nInvalid Entry. Please enter action number only.";
     }
-    return 0;
 }
 
 
-
-std::string Combat(void) {
+void Combat() {
     attackHit = rand() % 100;
     enemyHit = rand() % 100;
     if (playerHealth <= 0) {
@@ -1124,12 +1114,10 @@ std::string Combat(void) {
         std::cout << "\nInvalid Entry. Please enter action number only.";
         Combat();
     }
-    return 0;
 }
 
 
-
-std::string DreamWorld(void) {
+void DreamWorld() {
     std::cout << "\n\nWhat would you like to do?";
     std::cout << "\n\n1) Try to eat the hamburger." << "\n2) Ask the hamburger a question";
     //Print player stats
@@ -1226,10 +1214,7 @@ std::string DreamWorld(void) {
         std::cout << "\nInvalid Entry. Please enter action number only.";
         DreamWorld();
     }
-    return 0;
 }
-
-
 
 
 int main() {
@@ -1238,6 +1223,3 @@ int main() {
     std::cout << "\nYou wake up in your bed, naked, like any other day.\n";
     Bedroom();
 }
-
-
-
